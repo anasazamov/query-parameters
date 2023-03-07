@@ -11,7 +11,9 @@ class Bored:
         Returns:
             str: text of activity
         '''
-        pass
+        url=self.url+"Name/activity"
+        response=requests.get(url).json()
+        return response["activity"]
 
     def get_activity_by_type(self, type: str) -> dict:
         '''get activity by type
@@ -25,7 +27,10 @@ class Bored:
         Returns:
             dict: activity data
         '''
-        pass
+        url=self.url+"Name/activity"
+        p={"type":type}
+        response=requests.get(url,params=p).json()
+        return response
 
     def get_activity_by_id(self, key: int) -> dict:
         '''get activity by key
@@ -39,7 +44,10 @@ class Bored:
         Returns:
             dict: activity data
         '''
-        pass
+        url=self.url+"Name/activity"
+        p={"key":key}
+        response=requests.get(url,params=p).json()
+        return response
 
     def get_activity_by_accessibility(self, accessibility: float) -> dict:
         '''get activity by accessibility
@@ -54,7 +62,10 @@ class Bored:
         Returns:
             dict: activity data
         '''
-        pass
+        url=self.url+"Name/activity"
+        p={"accessibility":accessibility}
+        response=requests.get(url,params=p).json()
+        return response
 
     def get_activity_by_price(self, price: float) -> dict:
         '''get activity by price
@@ -69,7 +80,10 @@ class Bored:
         Returns:
             dict: activity data
         '''
-        pass
+        url=self.url+"Name/activity"
+        p={"price":price}
+        response=requests.get(url,params=p).json()
+        return response
 
     def get_activity_by_price_range(self, minprice: float, maxprice: float) -> dict:
         '''get activity by price
@@ -85,4 +99,7 @@ class Bored:
         Returns:
             dict: activity data
         '''
-        pass
+        url=self.url+"Name/activity"
+        p={"minprice":minprice,"maxprice":maxprice}
+        response=requests.get(url,params=p).json()
+        return response
